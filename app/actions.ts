@@ -205,8 +205,8 @@ export async function CreateSubscription() {
       address: "auto",
       name: "auto",
     },
-    success_url: "http://localhost:3000/dashboard/payment/success",
-    cancel_url: "http://localhost:3000/dashboard/payment/cancelled",
+    success_url: "https://blogplace.vercel.app/dashboard/payment/success",
+    cancel_url: "https://blogplace.vercel.app/dashboard/payment/cancelled",
   });
 
   return redirect(session.url as string);
@@ -226,7 +226,7 @@ export async function createCustomerPotal() {
 
   const session = await stripe.billingPortal.sessions.create({
     customer: stripeUserId?.customerId as string,
-    return_url: "http://localhost:3000/dashboard",
+    return_url: "https://blogplace.vercel.app/dashboard",
   });
 
   return redirect(session.url);
